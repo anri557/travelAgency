@@ -97,9 +97,9 @@ const detailTranslations = {
       "Nightlife": "Nightlife"
     },
     tourTypes: {
-      "Fun Tour": "🎉 Fun Tour",
-      "Romantic Tour": "💑 Romantic Tour",
-      "Adventure Tour": "🏛️ Adventure Tour"
+      "Fun Tour": "Fun Tour",
+      "Romantic Tour": "Romantic Tour",
+      "Adventure Tour": "Adventure Tour"
     }
   }
 };
@@ -114,7 +114,7 @@ export default function TourDetailsPage({ params }) {
   const [bundle, setBundle] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   // Date, Tour Type, Hotels, and Pricing states
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedDuration, setSelectedDuration] = useState(4);
@@ -271,8 +271,8 @@ export default function TourDetailsPage({ params }) {
     <main className="w-full bg-[#f8fafc] min-h-screen max-w-[1440px] mx-auto px-4 md:px-12 py-8 flex flex-col gap-8">
       {/* Back Button */}
       <div>
-        <Link 
-          href="/tours" 
+        <Link
+          href="/tours"
           className="inline-flex items-center gap-2.5 text-slate-500 hover:text-[#A3D1D6] font-bold text-sm transition"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -288,9 +288,9 @@ export default function TourDetailsPage({ params }) {
           {/* Main Visual Display */}
           <div className="bg-white rounded-[2.5rem] p-3 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
             <div className="h-[300px] md:h-[450px] w-full overflow-hidden rounded-[2rem] relative">
-              <Image 
-                src={activeImage} 
-                alt={bundle.title} 
+              <Image
+                src={activeImage}
+                alt={bundle.title}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -300,17 +300,16 @@ export default function TourDetailsPage({ params }) {
                 {translatedVibe}
               </span>
             </div>
-            
+
             {/* Gallery Thumbnails */}
             {bundle.images && bundle.images.length > 1 && (
               <div className="flex gap-4 p-3 overflow-x-auto mt-2">
                 {bundle.images.map((img, idx) => (
-                  <button 
+                  <button
                     key={idx}
                     onClick={() => setActiveImage(img)}
-                    className={`w-20 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all relative ${
-                      activeImage === img ? 'border-[#A3D1D6] scale-105 shadow-sm' : 'border-transparent hover:border-slate-300'
-                    }`}
+                    className={`w-20 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all relative ${activeImage === img ? 'border-[#A3D1D6] scale-105 shadow-sm' : 'border-transparent hover:border-slate-300'
+                      }`}
                   >
                     <Image src={img} alt="" fill sizes="80px" className="object-cover" />
                   </button>
@@ -328,7 +327,7 @@ export default function TourDetailsPage({ params }) {
               <h1 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight leading-none mb-4">
                 {bundle.city}
               </h1>
-              
+
               <div className="flex flex-wrap gap-4 text-xs font-bold text-slate-500">
                 <div className="flex items-center gap-2 px-3 py-2 bg-slate-50 rounded-xl">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4.5 w-4.5 text-[#A3D1D6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -427,19 +426,18 @@ export default function TourDetailsPage({ params }) {
                     {hotels.map((hotel) => {
                       const isSelected = selectedHotel?.id === hotel.id;
                       return (
-                        <div 
+                        <div
                           key={hotel.id}
                           onClick={() => setSelectedHotel(hotel)}
-                          className={`bg-white rounded-[2rem] border transition-all duration-300 p-4 flex flex-col gap-4 cursor-pointer relative overflow-hidden group ${
-                            isSelected 
-                              ? 'border-[#A3D1D6] shadow-[0_10px_30px_rgba(163,209,214,0.15)] ring-2 ring-[#A3D1D6]/20' 
+                          className={`bg-white rounded-[2rem] border transition-all duration-300 p-4 flex flex-col gap-4 cursor-pointer relative overflow-hidden group ${isSelected
+                              ? 'border-[#A3D1D6] shadow-[0_10px_30px_rgba(163,209,214,0.15)] ring-2 ring-[#A3D1D6]/20'
                               : 'border-slate-100 hover:border-[#A3D1D6]/50 hover:shadow-md'
-                          }`}
+                            }`}
                         >
                           {/* Image */}
                           <div className="h-48 w-full overflow-hidden rounded-2xl relative">
-                            <Image 
-                              src={hotel.image} 
+                            <Image
+                              src={hotel.image}
                               alt={hotel.name}
                               fill
                               sizes="(max-width: 768px) 100vw, 300px"
@@ -457,16 +455,16 @@ export default function TourDetailsPage({ params }) {
                             <div>
                               <div className="flex items-center gap-1 text-[#A3D1D6] mb-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24">
-                                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                                 </svg>
                                 <span className="text-xs font-black text-slate-700">{hotel.rating}</span>
                                 <span className="text-slate-400 text-[10px] font-bold">({hotel.reviewsCount})</span>
                               </div>
-                              
+
                               <h3 className="text-lg font-black text-slate-800 leading-tight mb-1.5">
                                 {hotel.name}
                               </h3>
-                              
+
                               <p className="text-slate-400 text-[10px] font-extrabold uppercase tracking-wider mb-2">
                                 {hotel.address}
                               </p>
@@ -503,11 +501,10 @@ export default function TourDetailsPage({ params }) {
 
                               <button
                                 type="button"
-                                className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
-                                  isSelected 
+                                className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${isSelected
                                     ? 'bg-[#A3D1D6]/10 text-[#A3D1D6]'
                                     : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
-                                }`}
+                                  }`}
                               >
                                 {isSelected ? dt.hotelSelected : dt.selectHotelBtn}
                               </button>
@@ -540,7 +537,7 @@ export default function TourDetailsPage({ params }) {
                 {dt.dateLabel}
               </label>
               <div className="relative">
-                <input 
+                <input
                   type="date"
                   value={selectedDate}
                   min={new Date().toISOString().split('T')[0]}
@@ -558,7 +555,7 @@ export default function TourDetailsPage({ params }) {
                 {dt.durationLabelPrompt}
               </label>
               <div className="relative">
-                <select 
+                <select
                   value={selectedDuration}
                   disabled={!selectedDate}
                   onChange={(e) => setSelectedDuration(Number(e.target.value))}
@@ -594,13 +591,12 @@ export default function TourDetailsPage({ params }) {
                       type="button"
                       onClick={() => setSelectedTourType(key)}
                       disabled={!selectedDate}
-                      className={`w-full text-left px-4 py-3 rounded-2xl font-bold text-xs border transition-all flex items-center justify-between ${
-                        !selectedDate 
+                      className={`w-full text-left px-4 py-3 rounded-2xl font-bold text-xs border transition-all flex items-center justify-between ${!selectedDate
                           ? 'bg-slate-50/50 border-slate-100 text-slate-300 cursor-not-allowed'
                           : isActive
                             ? 'bg-[#A3D1D6]/10 border-[#A3D1D6] text-slate-800 ring-2 ring-[#A3D1D6]/20'
                             : 'bg-white border-slate-100 text-slate-600 hover:border-slate-200'
-                      }`}
+                        }`}
                     >
                       <span>{label}</span>
                       {isActive && (
@@ -691,11 +687,10 @@ export default function TourDetailsPage({ params }) {
             <button
               onClick={handleBookNow}
               disabled={!pricing || !selectedHotel}
-              className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-md ${
-                pricing && selectedHotel
+              className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-md ${pricing && selectedHotel
                   ? 'bg-[#A3D1D6] text-white hover:bg-[#8cc4ca] hover:scale-[1.02] active:scale-[0.98] shadow-[#A3D1D6]/20'
                   : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
-              }`}
+                }`}
             >
               {dt.bookButton}
             </button>
