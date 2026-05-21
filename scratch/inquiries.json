@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1779280297153",
+    "name": "anri",
+    "email": "askarovianri@gmail.com",
+    "phone": "5667899",
+    "destination": "Rome",
+    "travelDate": "2026-05-24",
+    "tourType": "Fun Tour",
+    "hotel": "The YellowSquare Rome",
+    "hotelPrice": "1265",
+    "duration": "3",
+    "message": "გამარჯობა Explora! მსურს დავჯავშნო პაკეტი მიმართულებით: Rome, გამგზავრების თარიღი: 2026-05-24, ხანგრძლივობა: 3 ღამე. ჩემ მიერ შერჩეულია გასართობი (Fun) ტიპის ტური სასტუმროში: The YellowSquare Rome. პაკეტის სრული ღირებულებაა 1265 GEL. გთხოვთ დამიკავშირდეთ ანგარიშსწორების დეტალებისთვის.",
+    "createdAt": "2026-05-20T12:31:37.153Z"
+  }
+]
