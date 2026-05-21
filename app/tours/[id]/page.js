@@ -50,9 +50,9 @@ const detailTranslations = {
       "Nightlife": "ღამის ცხოვრება"
     },
     tourTypes: {
-      "Fun Tour": "🎉 Fun ტური",
-      "Romantic Tour": "💑 რომანტიკული",
-      "Adventure Tour": "🏛️ სათავგადასავლო"
+      "Fun Tour": "Fun ტური",
+      "Romantic Tour": "რომანტიკული",
+      "Adventure Tour": "სათავგადასავლო"
     }
   },
   en: {
@@ -430,8 +430,8 @@ export default function TourDetailsPage({ params }) {
                           key={hotel.id}
                           onClick={() => setSelectedHotel(hotel)}
                           className={`bg-white rounded-[2rem] border transition-all duration-300 p-4 flex flex-col gap-4 cursor-pointer relative overflow-hidden group ${isSelected
-                              ? 'border-[#A3D1D6] shadow-[0_10px_30px_rgba(163,209,214,0.15)] ring-2 ring-[#A3D1D6]/20'
-                              : 'border-slate-100 hover:border-[#A3D1D6]/50 hover:shadow-md'
+                            ? 'border-[#A3D1D6] shadow-[0_10px_30px_rgba(163,209,214,0.15)] ring-2 ring-[#A3D1D6]/20'
+                            : 'border-slate-100 hover:border-[#A3D1D6]/50 hover:shadow-md'
                             }`}
                         >
                           {/* Image */}
@@ -502,8 +502,8 @@ export default function TourDetailsPage({ params }) {
                               <button
                                 type="button"
                                 className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${isSelected
-                                    ? 'bg-[#A3D1D6]/10 text-[#A3D1D6]'
-                                    : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
+                                  ? 'bg-[#A3D1D6]/10 text-[#A3D1D6]'
+                                  : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
                                   }`}
                               >
                                 {isSelected ? dt.hotelSelected : dt.selectHotelBtn}
@@ -592,10 +592,10 @@ export default function TourDetailsPage({ params }) {
                       onClick={() => setSelectedTourType(key)}
                       disabled={!selectedDate}
                       className={`w-full text-left px-4 py-3 rounded-2xl font-bold text-xs border transition-all flex items-center justify-between ${!selectedDate
-                          ? 'bg-slate-50/50 border-slate-100 text-slate-300 cursor-not-allowed'
-                          : isActive
-                            ? 'bg-[#A3D1D6]/10 border-[#A3D1D6] text-slate-800 ring-2 ring-[#A3D1D6]/20'
-                            : 'bg-white border-slate-100 text-slate-600 hover:border-slate-200'
+                        ? 'bg-slate-50/50 border-slate-100 text-slate-300 cursor-not-allowed'
+                        : isActive
+                          ? 'bg-[#A3D1D6]/10 border-[#A3D1D6] text-slate-800 ring-2 ring-[#A3D1D6]/20'
+                          : 'bg-white border-slate-100 text-slate-600 hover:border-slate-200'
                         }`}
                     >
                       <span>{label}</span>
@@ -688,8 +688,8 @@ export default function TourDetailsPage({ params }) {
               onClick={handleBookNow}
               disabled={!pricing || !selectedHotel}
               className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-md ${pricing && selectedHotel
-                  ? 'bg-[#A3D1D6] text-white hover:bg-[#8cc4ca] hover:scale-[1.02] active:scale-[0.98] shadow-[#A3D1D6]/20'
-                  : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
+                ? 'bg-[#A3D1D6] text-white hover:bg-[#8cc4ca] hover:scale-[1.02] active:scale-[0.98] shadow-[#A3D1D6]/20'
+                : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
                 }`}
             >
               {dt.bookButton}
